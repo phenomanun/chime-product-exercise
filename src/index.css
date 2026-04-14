@@ -1,0 +1,130 @@
+:root {
+  /* Spotify-inspired (approximation) dark tokens */
+  --bg: #121212;
+  --surface: #181818;
+  --surface-2: #282828;
+  --text: #b3b3b3;
+  --text-h: #ffffff;
+  --border: rgba(255, 255, 255, 0.08);
+  --code-bg: rgba(255, 255, 255, 0.06);
+
+  --accent: #1ed760;
+  --accent-pressed: #1aa34a;
+  --accent-bg: rgba(30, 215, 96, 0.14);
+  --accent-border: rgba(30, 215, 96, 0.55);
+  --shadow: 0 18px 50px rgba(0, 0, 0, 0.45);
+
+  --sans: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --heading: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  font: 16px/150% var(--sans);
+  letter-spacing: 0.1px;
+  color-scheme: dark;
+  color: var(--text);
+  background: var(--bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @media (max-width: 1024px) {
+    font-size: 15px;
+  }
+}
+
+#root {
+  width: 1126px;
+  max-width: 100%;
+  margin: 0 auto;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1,
+h2 {
+  font-family: var(--heading);
+  font-weight: 700;
+  color: var(--text-h);
+}
+
+h1 {
+  font-size: 40px;
+  letter-spacing: -0.9px;
+  margin: 24px 0;
+  @media (max-width: 1024px) {
+    font-size: 32px;
+    margin: 18px 0;
+  }
+}
+h2 {
+  font-size: 22px;
+  line-height: 120%;
+  letter-spacing: -0.2px;
+  margin: 0 0 8px;
+  @media (max-width: 1024px) {
+    font-size: 18px;
+  }
+}
+p {
+  margin: 0;
+}
+
+code,
+.counter {
+  font-family: var(--mono);
+  display: inline-flex;
+  border-radius: 4px;
+  color: var(--text-h);
+}
+
+code {
+  font-size: 15px;
+  line-height: 135%;
+  padding: 4px 8px;
+  background: var(--code-bg);
+}
+
+/* Leaflet (OpenStreetMap) — match dark UI */
+.leaflet-container {
+  background: #0f0f0f;
+  font-family: var(--sans);
+}
+
+.leaflet-popup-content-wrapper,
+.leaflet-popup-tip {
+  background: var(--surface);
+  color: var(--text-h);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+.leaflet-popup-content {
+  margin: 12px 12px;
+  color: var(--text-h);
+}
+
+.leaflet-control-attribution {
+  background: rgba(18, 18, 18, 0.85) !important;
+  color: rgba(255, 255, 255, 0.55) !important;
+  border-top: 1px solid var(--border) !important;
+}
+
+.leaflet-control-attribution a {
+  color: rgba(255, 255, 255, 0.75) !important;
+}
