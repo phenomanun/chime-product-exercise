@@ -1,6 +1,6 @@
 # PRD — External template
 
-*Codename: **Project Do More**. Filled from* `PRD.md` *using Chime's PRD Template.*
+*Codename: **Project Do More**. Filled from* `PRD-draft.md` *using Chime's PRD Template.*
 
 ---
 
@@ -41,7 +41,7 @@ If we don’t solve it, listeners keep **leaking to fragmented channels**; Spoti
 
 ### Goals
 
-1. **Primary:** Increase **% of listeners attending concerts** (measurement plan per **Metrics** below and `PRD.md` §10).
+1. **Primary:** Increase **% of listeners attending concerts** (measurement plan per **Metrics** below and `PRD-draft.md` §10).
 2. **Secondary:** Increase **engagement from concertgoers** in Spotify before and after the event (saves, calendar, reminders, post-show modules).
 
 ### Non-goals (V1)
@@ -96,7 +96,7 @@ Success metrics, funnel definitions, and engagement KPIs follow as below. Experi
 
 Because purchase occurs off-platform in V1, attendance is measured using a combination of **direct partner conversion signals** (where available), **modeled conversion** (fallback), and **attendance proxies** (e.g. calendar + geo + engagement signals; privacy-reviewed). Partner-level postback contracts and legal details are **out of scope** for this PRD.
 
-Reporting separates **observed attendance/conversion** (Tier 1/2 in `PRD.md`) and **modeled attendance** (Tier 3).
+Reporting separates **observed attendance/conversion** (Tier 1/2 in `PRD-draft.md`) and **modeled attendance** (Tier 3).
 
 ### Primary conversion KPIs
 
@@ -182,4 +182,4 @@ Reporting separates **observed attendance/conversion** (Tier 1/2 in `PRD.md`) an
 
 ---
 
-*Source: internal draft `PRD.md` (sections 1–13). Template structure: `PRD Template - External.pdf`.*
+*Source: internal draft `PRD-draft.md` (sections 1–13). Template structure: `PRD Template - External.pdf`.*

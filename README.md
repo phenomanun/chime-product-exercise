@@ -1,8 +1,8 @@
 # Spotify Events (V1) — Prototype
 
-This is a clickable V1 prototype built from [`PRD.md`](./PRD.md) for a **listener-first** concerts discovery experience with **partner deep-link checkout**.
+This is a clickable V1 prototype built from [`PRD-draft.md`](./PRD-draft.md) for a **listener-first** concerts discovery experience with **partner deep-link checkout**.
 
-## What’s implemented (mapped to PRD)
+## What’s implemented (mapped to PRD draft)
 - **Surfaces**:
   - Home: “Live events for you” + “Trending near you”
   - “Live near you” hub (basic filter + sort)
@@ -41,7 +41,7 @@ You’ll see events like:
 
 Event logger implementation: `src/lib/analytics.ts`.
 
-## Notes / intentional limitations (V1 per PRD)
+## Notes / intentional limitations (V1 per PRD draft)
 - Checkout happens **off-platform** via partner deep-link.
 - Partner “purchase confirmation” is **not** implemented; this prototype only demonstrates the funnel events and handoff logging.
 - Data is mocked in `src/domain/mockData.ts`.
