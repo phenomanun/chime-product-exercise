@@ -159,7 +159,8 @@
 .container {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 22px 16px 56px;
+  /* Leave room for fixed bottom tab bar + iOS safe area */
+  padding: 22px 16px calc(88px + env(safe-area-inset-bottom, 0px));
 }
 
 .heroCard {
@@ -339,5 +340,103 @@
 .kpiVal {
   font-family: var(--mono);
   color: var(--text-h);
+}
+
+/* Bottom tab bar (Spotify-style) */
+.bottomTabBar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 40;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-around;
+  border-top: 1px solid var(--border);
+  background: rgba(18, 18, 18, 0.94);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  box-sizing: border-box;
+}
+
+.bottomTab {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 6px 10px;
+  color: rgba(255, 255, 255, 0.55);
+  text-decoration: none;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font: inherit;
+  min-width: 0;
+}
+
+.bottomTab:hover {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.bottomTabActive {
+  color: #ffffff;
+}
+
+.bottomTabActive .bottomTabIcon {
+  opacity: 1;
+  color: var(--accent);
+}
+
+.bottomTabInner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  max-width: 100%;
+}
+
+.bottomTabIcon {
+  width: 24px;
+  height: 24px;
+  display: block;
+  opacity: 0.65;
+  flex-shrink: 0;
+}
+
+.bottomTabLabel {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.1;
+  text-align: center;
+}
+
+.searchInput {
+  width: 100%;
+  max-width: 480px;
+  box-sizing: border-box;
+  padding: 12px 18px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text-h);
+  font: inherit;
+  outline: none;
+}
+
+.searchInput::placeholder {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.searchInput:focus {
+  border-color: var(--accent-border);
+  box-shadow: 0 0 0 3px var(--accent-bg);
+}
+
+@media (max-width: 640px) {
+  .container {
+    padding: 16px 14px calc(84px + env(safe-area-inset-bottom, 0px));
+  }
 }
 

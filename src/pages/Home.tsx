@@ -18,7 +18,6 @@ export function HomePage() {
       <div>
         <div className="sectionHeader">
           <h2 className="sectionTitle">Live events for you</h2>
-          <div className="muted">Personalized using follows, listening, saves</div>
         </div>
         <div className="twoCol">
           {recommended.map((e, idx) => (
@@ -28,7 +27,6 @@ export function HomePage() {
 
         <div className="sectionHeader" style={{ marginTop: 18 }}>
           <h2 className="sectionTitle">Trending near you</h2>
-          <div className="muted">A lightweight “what’s hot” module</div>
         </div>
         <div className="twoCol">
           {trending.map((e, idx) => (

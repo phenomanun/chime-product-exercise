@@ -2,6 +2,7 @@ import { Navigate, Route, Routes } from 'react-router-dom'
 import { AppShell } from './components/AppShell'
 import { HomePage } from './pages/Home'
 import { LiveNearYouPage } from './pages/LiveNearYou'
+import { SearchPage } from './pages/Search'
 import { ArtistPage } from './pages/Artist'
 import { EventDetailPage } from './pages/EventDetail'
 import { CheckoutPage } from './pages/Checkout'
@@ -15,8 +16,10 @@ function App() {
     <SavedEventsProvider>
       <Routes>
         <Route element={<AppShell />}>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/live" element={<LiveNearYouPage />} />
+                   <Route path="/" element={<HomePage />} />
+          <Route path="/events" element={<LiveNearYouPage />} />
+          <Route path="/live" element={<Navigate to="/events" replace />} />
+          <Route path="/search" element={<SearchPage />} />
           <Route path="/artist/:artistId" element={<ArtistPage />} />
           <Route path="/event/:eventId" element={<EventDetailPage />} />
           <Route path="/checkout/:partnerId/:eventId" element={<CheckoutPage />} />

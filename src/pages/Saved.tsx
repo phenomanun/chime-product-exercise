@@ -18,7 +18,7 @@ export function SavedEventsPage() {
         <div className="card">
           <h3 className="eventTitle">Nothing saved yet</h3>
           <p className="muted">
-            Save events from <Link to="/">Home</Link> or <Link to="/live">Live near you</Link> to plan attendance.
+            Save events from <Link to="/">Home</Link> or <Link to="/events">Live near you</Link> to plan attendance.
           </p>
         </div>
       ) : (
