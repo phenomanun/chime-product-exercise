@@ -2,6 +2,8 @@
 
 This is a clickable V1 prototype built from [`PRD-draft.md`](./PRD-draft.md) for a **listener-first** concerts discovery experience with **partner deep-link checkout**.
 
+The UI is designed to work well on **desktop web** and **mobile web (mweb)**—responsive layouts and touch-friendly patterns. **Tailwind CSS** is used intentionally so spacing, typography, and breakpoints stay consistent across viewports.
+
 ## What’s implemented (mapped to PRD draft)
 - **Surfaces**:
   - Home: “Live events for you” + “Trending near you”
@@ -25,6 +27,8 @@ npm run dev
 ```
 
 Then open the URL printed in the terminal (usually `http://localhost:5173`).
+
+To preview the **mobile web (mweb)** experience on your machine, open **Developer Tools** (e.g. right-click the page → **Inspect**), then enable the **device toolbar** / **responsive design mode** (in Chrome: **Toggle device toolbar** or `Cmd+Shift+M` on macOS, `Ctrl+Shift+M` on Windows/Linux) and pick a phone-sized viewport.
 
 ## Analytics (prototype-only)
 Open DevTools → Console and interact with the UI.
