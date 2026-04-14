@@ -30,7 +30,6 @@ export function ArtistPage() {
               Genres: {artist.genres.join(', ')}
             </p>
           </div>
-          <span className="pill pillAccent">Artist page</span>
         </div>
       </div>
 

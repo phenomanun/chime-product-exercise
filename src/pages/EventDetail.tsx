@@ -130,7 +130,6 @@ export function EventDetailPage() {
         <div className="col8">
           <div className="sectionHeader">
             <h2 className="sectionTitle">Why recommended</h2>
-            <div className="muted">Build trust + debuggability</div>
           </div>
           <div className="card">
             <ul className="smallList">
@@ -142,7 +141,6 @@ export function EventDetailPage() {
 
           <div className="sectionHeader">
             <h2 className="sectionTitle">Lineup</h2>
-            <div className="muted">Artist ↔ event entity matching</div>
           </div>
           <div className="card">
             <div className="pillRow">
@@ -179,7 +177,6 @@ export function EventDetailPage() {
         <aside className="col4">
           <div className="sectionHeader">
             <h2 className="sectionTitle">Venue</h2>
-            <div className="muted">Logistics</div>
           </div>
           <div className="card">
             <div className="kpi">
@@ -206,7 +203,6 @@ export function EventDetailPage() {
 
           <div className="sectionHeader" style={{ marginTop: 18 }}>
             <h2 className="sectionTitle">Headliner</h2>
-            <div className="muted">Artist page</div>
           </div>
           <div className="card">
             <div className="kpi">
