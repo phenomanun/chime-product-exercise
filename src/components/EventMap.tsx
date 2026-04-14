@@ -1,6 +1,6 @@
-import { useMemo } from 'react'
+import { useEffect, useMemo } from 'react'
 import { Link } from 'react-router-dom'
-import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet'
+import { MapContainer, Marker, Popup, TileLayer, useMap } from 'react-leaflet'
 import L from 'leaflet'
 import marker2x from 'leaflet/dist/images/marker-icon-2x.png'
 import marker from 'leaflet/dist/images/marker-icon.png'
@@ -16,6 +16,23 @@ L.Icon.Default.mergeOptions({
 })
 
 type Pin = { event: Event; venue: Venue }
+
+/** Fits the map to show every marker (same filtered set as the list view). */
+function FitMapToEvents({ positions }: { positions: [number, number][] }) {
+  const map = useMap()
+
+  useEffect(() => {
+    if (positions.length === 0) return
+    if (positions.length === 1) {
+      map.setView(positions[0], 14)
+      return
+    }
+    const b = L.latLngBounds(positions)
+    map.fitBounds(b, { padding: [40, 40], maxZoom: 15 })
+  }, [map, positions])
+
+  return null
+}
 
 export function EventMap({ events }: { events: Event[] }) {
   const pins = useMemo<Pin[]>(() => {
@@ -35,12 +52,14 @@ export function EventMap({ events }: { events: Event[] }) {
     return [lat, lng]
   }, [pins])
 
+  const positions = useMemo(() => pins.map((p) => [p.venue.lat, p.venue.lng] as [number, number]), [pins])
+
   return (
     <div className="card" style={{ padding: 14 }}>
       <div className="row" style={{ marginBottom: 10 }}>
         <div>
           <div className="kpiName">Map</div>
-          <div className="muted">OpenStreetMap (Leaflet)</div>
+          <div className="muted">OpenStreetMap — all events in the current result set</div>
         </div>
         <div className="pillRow" style={{ marginTop: 0 }}>
           <span className="pill">Pins: {pins.length}</span>
@@ -55,6 +74,7 @@ export function EventMap({ events }: { events: Event[] }) {
           style={{ height: '100%', width: '100%' }}
           attributionControl={true}
         >
+          <FitMapToEvents positions={positions} />
           <TileLayer
             // OpenStreetMap tiles (public)
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

@@ -13,10 +13,6 @@ export function HomePage() {
           A listener-first discovery → booking handoff prototype. Designed to convert listening affinity into live attendance
           (with partner checkout).
         </p>
-        <div className="pillRow" style={{ marginTop: 12 }}>
-          <span className="pill pillAccent">V1: discovery + save + calendar + partner deep-link</span>
-          <span className="pill">Measurement visible in console</span>
-        </div>
       </section>
 
       <div>

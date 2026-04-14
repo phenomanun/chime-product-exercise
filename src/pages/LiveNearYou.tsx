@@ -57,28 +57,62 @@ export function LiveNearYouPage() {
         </div>
       </div>
 
-      <div className="sectionHeader" style={{ marginTop: 16 }}>
-        <h2 className="sectionTitle">Events</h2>
-        <div className="pillRow" style={{ marginTop: 0 }}>
-          <button className={`btn ${view === 'list' ? 'btnPrimary' : ''}`} onClick={() => setView('list')}>
+      <div className="sectionHeader" style={{ marginTop: 16, alignItems: 'center' }}>
+        <h2 className="sectionTitle" id="events-heading">
+          Events
+        </h2>
+        <div className="pillRow" style={{ marginTop: 0, alignItems: 'center' }} role="tablist" aria-label="List or map view">
+          <button
+            type="button"
+            role="tab"
+            id="tab-list"
+            aria-selected={view === 'list'}
+            aria-controls="events-panel"
+            className={`btn ${view === 'list' ? 'btnPrimary' : ''}`}
+            onClick={() => setView('list')}
+          >
             List
           </button>
-          <button className={`btn ${view === 'map' ? 'btnPrimary' : ''}`} onClick={() => setView('map')}>
+          <button
+            type="button"
+            role="tab"
+            id="tab-map"
+            aria-selected={view === 'map'}
+            aria-controls="events-panel"
+            className={`btn ${view === 'map' ? 'btnPrimary' : ''}`}
+            onClick={() => setView('map')}
+          >
             Map
           </button>
           <span className="pill">{events.length} results</span>
         </div>
       </div>
 
-      {view === 'list' ? (
-        <div className="twoCol">
-          {events.map((e, idx) => (
-            <EventCard key={e.id} event={e} surfaceId="live_hub" rankPosition={idx + 1} />
-          ))}
-        </div>
-      ) : (
-        <EventMap events={events} />
-      )}
+      <div id="events-panel" role="tabpanel" aria-labelledby={view === 'list' ? 'tab-list' : 'tab-map'}>
+        {view === 'list' ? (
+          events.length === 0 ? (
+            <div className="card">
+              <p className="muted" style={{ margin: 0 }}>
+                No events match your filters. Try turning off “Only available” or changing sort.
+              </p>
+            </div>
+          ) : (
+            <div className="twoCol">
+              {events.map((e, idx) => (
+                <EventCard key={e.id} event={e} surfaceId="live_hub" rankPosition={idx + 1} />
+              ))}
+            </div>
+          )
+        ) : events.length === 0 ? (
+          <div className="card">
+            <p className="muted" style={{ margin: 0 }}>
+              Nothing to show on the map. Adjust filters above or switch to list view.
+            </p>
+          </div>
+        ) : (
+          <EventMap events={events} />
+        )}
+      </div>
     </div>
   )
 }
